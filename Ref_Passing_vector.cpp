@@ -49,15 +49,13 @@ double &comp_vec(vector<double>&v1, vector<double>&v2)
         //return the vector that has largest avg.
         return v1_tot >= v2_tot ? v1_tot : v2_tot;
     }
-    int main()
+
+int main()
     {
         //random list of numbers for each vector for proofing
         vector<double>list1{7.57, 45};
 
         vector<double>list2{45.5, 8.5};
-
-        cout << endl;
-        cout << endl;
 
         double &result = comp_vec(list1, list2);
         
