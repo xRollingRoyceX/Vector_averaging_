@@ -10,15 +10,13 @@
 //compare_vectors, get avg of both.
 double &comp_vec(vector<double>&v1, vector<double>&v2)
 {
-    //This function assumes that a vector is not empty, (for now).
-    
-    //declare v1 & v2 to hold total additions
+    //This function assumes that a vector is not empty, (for now)
+    //no real error checking logic statments
+
     double v1_cnt = 0, v2_cnt = 0;
     
-    //declare v1_tot(al) and v2_tot(al) to hold total avg's.
     double v1_tot = 0, v2_tot = 0;
 
-    // j is to hold count for separate vector.    
     auto j = 0;
     
     if (v1.size() > v2.size()) 
@@ -29,7 +27,6 @@ double &comp_vec(vector<double>&v1, vector<double>&v2)
             v2_cnt += v2[j];
         }
     }
-    //error checking logic statments
     else if (v2.size() > v1.size()) 
     {
         for (decltype(v2.size()) i = 0; i != v2.size(); ++i, ++j)
@@ -55,16 +52,14 @@ double &comp_vec(vector<double>&v1, vector<double>&v2)
     }
 
 int main()
-    {
-        //random list of numbers for each vector for proofing
-        vector<double>list1{7.57, 45};
-
-        vector<double>list2{45.5, 8.5};
-
-        double &result = comp_vec(list1, list2);
-        
-        cout << result << endl;
-        return 0;
-    
-    }
+{
+    //random list of numbers for each vector for proofing
+       
+    vector<double>list1{7.57, 45};
+    vector<double>list2{45.5, 8.5};
+    //written this way just cause.
+    double &result = comp_vec(list1, list2);
+    cout << result << endl;
+    return 0;    
+}
 
