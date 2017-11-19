@@ -6,6 +6,8 @@
  * Created on November 17, 2017, 9:03 AM
  */
 #include "inclds"
+
+//compare_vectors, get avg of both.
 double &comp_vec(vector<double>&v1, vector<double>&v2)
 {
     //declare v1 & v2 to hold total additions
