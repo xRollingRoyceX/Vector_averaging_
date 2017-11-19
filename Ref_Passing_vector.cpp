@@ -7,17 +7,20 @@
  */
 #include "inclds"
 
-//compare_vectors, get the return type double for vector with largest avg.
-double &comp_vec(vector<double>&v1, vector<double>&v2)
+
+//Compare_vectors, Get the return type double for vector with largest avg.
+double &comp_vec(vector<double> &v1, vector<double> &v2)
 {
-    //This function assumes that a vector is not empty, (for now)
-    //no real error checking logic statments
-    double v1_cnt = 0, v2_cnt = 0;
+            /*  
+                This function assumes that a Vector is not empty, (for now, i'll fix it soon)
+                no real error checking in the logic statments. So, know that going in
+           */
     
-    double v1_tot = 0, v2_tot = 0;
+    double v1_cnt = 0, v2_cnt = 0;      //For the addition of vector  
+    double v1_tot = 0, v2_tot = 0;      //Holds the results of the avg (Totals)
+    auto j = 0;                         //subscript for the smaller vector
     
-    auto j = 0;
-    
+    //To handle Vectors of differnt sizes.
     if (v1.size() > v2.size()) 
     {
         for (decltype(v1.size()) i = 0; i != v1.size(); ++i, ++j) 
@@ -33,7 +36,8 @@ double &comp_vec(vector<double>&v1, vector<double>&v2)
             v1_cnt += v1[j];
             v2_cnt += v2[i];
         }
-    } 
+    }
+    //If vectors are the same size
     else 
     {
         for (decltype(v1.size()) i = 0; i != v1.size(); ++i) 
@@ -42,7 +46,7 @@ double &comp_vec(vector<double>&v1, vector<double>&v2)
             v2_cnt += v2[i];
         }
     }
-        //avg's both vectors.
+    //avg's both vectors.
     v1_tot = v1_cnt / v1.size();
     v2_tot = v2_cnt / v2.size();
 
@@ -54,7 +58,8 @@ int main()
     //random list of numbers for each vector for proofing
     vector<double>list1{7.57, 45};
     vector<double>list2{45.5, 8.5};
-    //written this way just cause.
+    // this line was written this way just cause. this was unnessassary 
+    //in all regards .... for what I want the program to do. 
     double &result = comp_vec(list1, list2);
     cout << result << endl;
 `   return 0;    
