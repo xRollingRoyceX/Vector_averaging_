@@ -12,11 +12,10 @@ double &comp_vec(vector<double>&v1, vector<double>&v2)
 {
     //This function assumes that a vector is not empty, (for now)
     //no real error checking logic statments
-
     double v1_cnt = 0, v2_cnt = 0;
     
     double v1_tot = 0, v2_tot = 0;
-
+    
     auto j = 0;
     
     if (v1.size() > v2.size()) 
@@ -55,11 +54,11 @@ int main()
 {
     //random list of numbers for each vector for proofing
        
-    vector<double>list1{7.57, 45};
-    vector<double>list2{45.5, 8.5};
-    //written this way just cause.
-    double &result = comp_vec(list1, list2);
-    cout << result << endl;
-    return 0;    
+        vector<double>list1{7.57, 45};
+        vector<double>list2{45.5, 8.5};
+        //written this way just cause.
+        double &result = comp_vec(list1, list2);
+        cout << result << endl;
+    `   return 0;    
 }
 
