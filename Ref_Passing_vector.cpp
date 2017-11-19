@@ -11,7 +11,7 @@
 double &comp_vec(vector<double>&v1, vector<double>&v2)
 {
     //This function assumes that a vector is not empty, (for now)
-    //no real error checking logic statmentsyu
+    //no real error checking logic statments
     double v1_cnt = 0, v2_cnt = 0;
     
     double v1_tot = 0, v2_tot = 0;
