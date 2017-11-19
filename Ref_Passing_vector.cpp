@@ -16,8 +16,7 @@ double &comp_vec(vector<double>&v1, vector<double>&v2)
 
     // j is to hold count for separate vector.    
     int j = 0;
-
-    //Two for() loops to add up the vectors.
+    
     if (v1.size() > v2.size()) 
     {
         for (decltype(v1.size()) i = 0; i != v1.size(); ++i, ++j) 
