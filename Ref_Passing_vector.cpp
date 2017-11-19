@@ -43,13 +43,12 @@ double &comp_vec(vector<double>&v1, vector<double>&v2)
         }
     }
         //avg's both vectors.
-        v1_tot = v1_cnt / v1.size();
-        v2_tot = v2_cnt / v2.size();
+    v1_tot = v1_cnt / v1.size();
+    v2_tot = v2_cnt / v2.size();
 
-        //return the vector that has largest avg.
-        return v1_tot >= v2_tot ? v1_tot : v2_tot;
-    }
-
+    //return the vector that has largest avg.
+    return v1_tot >= v2_tot ? v1_tot : v2_tot;
+}
 int main()
 {
     //random list of numbers for each vector for proofing
