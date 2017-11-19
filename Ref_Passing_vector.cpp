@@ -15,7 +15,7 @@ double &comp_vec(vector<double>&v1, vector<double>&v2)
     double v1_tot = 0, v2_tot = 0;
 
     // j is to hold count for separate vector.    
-    int j = 0;
+    auto j = 0;
     
     if (v1.size() > v2.size()) 
     {
