@@ -10,10 +10,12 @@
 //compare_vectors, get avg of both.
 double &comp_vec(vector<double>&v1, vector<double>&v2)
 {
+    //This function assumes that a vector is not empty, (for now).
+    
     //declare v1 & v2 to hold total additions
     double v1_cnt = 0, v2_cnt = 0;
     
-    //declare v1_t and v2_t to hold total avg's.
+    //declare v1_tot(al) and v2_tot(al) to hold total avg's.
     double v1_tot = 0, v2_tot = 0;
 
     // j is to hold count for separate vector.    
@@ -44,7 +46,7 @@ double &comp_vec(vector<double>&v1, vector<double>&v2)
             v2_cnt += v2[i];
         }
     }
-        //get avg's form both vectors.
+        //avg's both vectors.
         v1_tot = v1_cnt / v1.size();
         v2_tot = v2_cnt / v2.size();
 
