@@ -36,7 +36,7 @@ double &comp_vec(vector<double>&v1, vector<double>&v2)
     } 
     else 
     {
-        for (decltype(v1.size()) i = 0; i != v1.size() && j != v1.size(); ++i) 
+        for (decltype(v1.size()) i = 0; i != v1.size(); ++i) 
         {
             v1_cnt += v1[i];
             v2_cnt += v2[i];
