@@ -7,7 +7,8 @@
  */
 #include <std_lib_facilities.h> 
 
-double &comp_vec(vector<double>&v1, vector<double>&v2) {
+double &comp_vec(vector<double>&v1, vector<double>&v2) 
+{
     if (v1.empty() || v2.empty()) 
     {
         error("no possible comparison, a vector is empty.");
@@ -22,21 +23,27 @@ double &comp_vec(vector<double>&v1, vector<double>&v2) {
     if (v2.size() > v1.size() && !v1.empty() && !v2.empty());
     {
         for (decltype(v1.size()) i = 0; i != v1.size()
-                && j != v2.size(); ++i, ++j) {
+                && j != v2.size(); ++i, ++j) 
+        {
             v2_cnt += v2[j];
             v1_cnt += v1[i];
 
         }
     }
-    if (v1.size() > v2.size() && !v1.empty() && !v2.empty()) {
+    if (v1.size() > v2.size() && !v1.empty() && !v2.empty())
+    {
         for (decltype(v2.size()) i = 0; i != v2.size()
-                && j != v1.size(); ++i, ++j) {
+                && j != v1.size(); ++i, ++j) 
+        {
             v1_cnt += v1[j];
             v2_cnt += v2[i];
         }
-    } else {
+    } 
+    else
+    {
         for (decltype(v1.size()) i = 0; i != v1.size()
-                && j != v2.size(); ++i, ++j) {
+                && j != v2.size(); ++i, ++j) 
+        {
             v1_cnt += v1[i];
             v2_cnt += v2[j];
         }
@@ -52,14 +59,9 @@ double &comp_vec(vector<double>&v1, vector<double>&v2) {
 int main() {
     //random list of numbers for each vector for proofing
     vector<double>list1{100, 100, 50, 11, 10, 80, 90, 10, 200};
-
     vector<double>list2{1200, 1200, 20, 50.50};
-
-    cout << endl;
-    cout << endl;
-
     auto &result = comp_vec(list1, list2);
-
+    
     cout << result << endl;
     return 0;
 
