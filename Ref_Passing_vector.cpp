@@ -5,63 +5,63 @@
  * it's natural to get flustered and want to quit C++ forever - 
  * Created on November 17, 2017, 9:03 AM
  */
-#include "inclds"
+#include <std_lib_facilities.h> 
 
-
-//Compare_vectors, Get the return type double for vector with largest avg.
-double &comp_vec(vector<double> &v1, vector<double> &v2)
-{
-            /*  
-                This function assumes that a Vector is not empty, (for now, i'll fix it soon)
-                no real error checking in the logic statments. So, know that going in
-           */
-    
-    double v1_cnt = 0, v2_cnt = 0;      //For the addition of vector  
-    double v1_tot = 0, v2_tot = 0;      //Holds the results of the avg (Totals)
-    auto j = 0;                         //subscript for the smaller vector
-    
-    //To handle Vectors of differnt sizes.
-    if (v1.size() > v2.size()) 
+double &comp_vec(vector<double>&v1, vector<double>&v2) {
+    if (v1.empty() || v2.empty()) 
     {
-        for (decltype(v1.size()) i = 0; i != v1.size(); ++i, ++j) 
-        {
+        error("no possible comparison, a vector is empty.");
+    }
+
+    double v1_cnt = 0, v2_cnt = 0; //declare v1 & v2 to hold total additions
+
+    double v1_tot = 0, v2_tot = 0; //declare v1_t and v2_t to hold total avg's.
+
+    double j = 0;                  // j is to hold count for separate vector.    
+
+    if (v2.size() > v1.size() && !v1.empty() && !v2.empty());
+    {
+        for (decltype(v1.size()) i = 0; i != v1.size()
+                && j != v2.size(); ++i, ++j) {
+            v2_cnt += v2[j];
+            v1_cnt += v1[i];
+
+        }
+    }
+    if (v1.size() > v2.size() && !v1.empty() && !v2.empty()) {
+        for (decltype(v2.size()) i = 0; i != v2.size()
+                && j != v1.size(); ++i, ++j) {
+            v1_cnt += v1[j];
+            v2_cnt += v2[i];
+        }
+    } else {
+        for (decltype(v1.size()) i = 0; i != v1.size()
+                && j != v2.size(); ++i, ++j) {
             v1_cnt += v1[i];
             v2_cnt += v2[j];
         }
     }
-    else if (v2.size() > v1.size()) 
-    {
-        for (decltype(v2.size()) i = 0; i != v2.size(); ++i, ++j)
-        {
-            v1_cnt += v1[j];
-            v2_cnt += v2[i];
-        }
-    }
-    //If vectors are the same size
-    else 
-    {
-        for (decltype(v1.size()) i = 0; i != v1.size(); ++i) 
-        {
-            v1_cnt += v1[i];
-            v2_cnt += v2[i];
-        }
-    }
-    //avg's both vectors.
+    //get avg's form both vectors.
     v1_tot = v1_cnt / v1.size();
     v2_tot = v2_cnt / v2.size();
 
     //return the vector that has largest avg.
     return v1_tot >= v2_tot ? v1_tot : v2_tot;
 }
-int main()
-{
+
+int main() {
     //random list of numbers for each vector for proofing
-    vector<double>list1{7.57, 45};
-    vector<double>list2{45.5, 8.5};
-    // this line was written this way just cause. this was unnessassary 
-    //in all regards .... for what I want the program to do. 
-    double &result = comp_vec(list1, list2);
+    vector<double>list1{100, 100, 50, 11, 10, 80, 90, 10, 200};
+
+    vector<double>list2{1200, 1200, 20, 50.50};
+
+    cout << endl;
+    cout << endl;
+
+    auto &result = comp_vec(list1, list2);
+
     cout << result << endl;
-`   return 0;    
+    return 0;
+
 }
 
