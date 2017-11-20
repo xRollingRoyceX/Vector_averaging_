@@ -15,12 +15,10 @@ double &comp_vec(vector<double>&v1, vector<double>&v2)
     }
 
     double v1_cnt = 0, v2_cnt = 0; //declare v1 & v2 to hold total additions
-
     double v1_tot = 0, v2_tot = 0; //declare v1_t and v2_t to hold total avg's.
-
     double j = 0;                  // j is to hold count for separate vector.    
 
-    if (v2.size() > v1.size() && !v1.empty() && !v2.empty());
+    if (v2.size() > v1.size());
     {
         for (decltype(v1.size()) i = 0; i != v1.size()
                 && j != v2.size(); ++i, ++j) 
@@ -30,7 +28,7 @@ double &comp_vec(vector<double>&v1, vector<double>&v2)
 
         }
     }
-    if (v1.size() > v2.size() && !v1.empty() && !v2.empty())
+    if (v1.size() > v2.size())
     {
         for (decltype(v2.size()) i = 0; i != v2.size()
                 && j != v1.size(); ++i, ++j) 
