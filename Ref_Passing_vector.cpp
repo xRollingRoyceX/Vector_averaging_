@@ -5,13 +5,15 @@
  * it's natural to get flustered and want to quit C++ forever - 
  * Created on November 17, 2017, 9:03 AM
  */
-#include <std_lib_facilities.h> 
+#include <inclds>
+#include<exception>
 
 double &comp_vec(vector<double>&v1, vector<double>&v2) 
 {
     if (v1.empty() || v2.empty()) 
     {
-        error("no possible comparison, a vector is empty.");
+        throw std::runtime_error("Restart your program; you have an empty vector that cannot be used in function: "
+                                "comp_vec.");
     }
 
     double v1_cnt = 0, v2_cnt = 0; //declare v1 & v2 to hold total additions
