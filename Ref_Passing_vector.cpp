@@ -27,8 +27,8 @@ void return_some_numbers()
     }
      */
 }
-
-double &comp_vec(const vector<double>&v1, const vector<double>&v2) 
+//Get two vectors that have > 2 numbers in each vector.
+double &comp_vec(const vector<double> &v1, const vector<double> &v2) 
 {
     if (v1.empty() || v2.empty() || v1.size() < 2 || v2.size() < 2)
     {
@@ -37,41 +37,35 @@ double &comp_vec(const vector<double>&v1, const vector<double>&v2)
                 "of numbers to calculate average with. ");
     }
     
-    auto j = 0; //J is to hold count for separate vector.    
-    auto i = 0; //same for I as for J :) otherwise division is off
-
-    double v1_cnt = 0, v2_cnt = 0; //declare v1 & v2 to hold total additions   
-
+    auto j = 0;                     //J is to hold count for separate vector.    
+    auto i = 0;                     //same for I as for J :) otherwise division is off
+    double v1_cnt = 0, v2_cnt = 0;  //declare v1 & v2 to hold total additions   
+    
+    //make sure i and j transverse the vector.
     for (i = 0; i != v1.size() && j != v2.size(); ++j, ++i) 
     {
-        v1_cnt += v1[i];
-        v2_cnt += v2[j];
+        v1_cnt += v1[i]; // I
+        v2_cnt += v2[j]; // J
     }
+    //declare v1_t and v2_t to hold total avg's.
+    double v1_tot = 0, v2_tot = 0; 
+    v1_tot = v1_cnt / i; // I
+    v2_tot = v2_cnt / j; // J
 
-    double v1_tot = 0, v2_tot = 0; //declare v1_t and v2_t to hold total avg's.
-
-    //get avg's form both vectors.
-
-    v1_tot = v1_cnt / i; //I
-    v2_tot = v2_cnt / j; //J
-
-    //return the vector that has largest avg.
     // somewhere between here, and 6 lines of code (up or down) I feel a bug...
-    return v1_tot > v2_tot ? v1_tot : v2_tot;
+    //get avg's form both vectors, return the largest avg...
+    return v1_tot > v2_tot ? v1_tot : v2_tot;    
 }
-
 int main() 
 {
     //random list of numbers for each vector for proofing
-
     vector< double >list2{2, 7.02506, 22.1003, 47.2256, 82.401, 127.627, 182.902,
         248.228, 323.604, 409.03, 504.506, 910.033, 32.22, 44.11};
-
     vector< double >list1{2.30256, 3.58828, 5.44542, 7.87399, 10.874, 14.4454,
         18.5883, 23.3026, 28.5883, 34.4454, 40.874, 47.874, 44.5};
-
+    
     double result = comp_vec(list1, list2);
-
     cout << "Largest avg. between vector1 & vector2: " << result << endl;
+    
     return 0;
 }
