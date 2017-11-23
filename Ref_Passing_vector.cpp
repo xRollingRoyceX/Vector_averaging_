@@ -9,24 +9,26 @@
 #include<exception>
 //[i like this equation] i / (32 + 7) + 2 + (i * i) / 3 << endl;
 
-void return_some_numbers() {
+void return_some_numbers() 
+{
     /*
      * change a few numbers and stuff to get some "random" numbers 
      * to use as testing numbers for the function -
      * "comp_vec(const &vec, const vec&);" 
-     */ 
+     */
+
     /*
-                remove comments here to use return_some_numbers
-                using this to just place into calculator (in linux of course to easily check numbers;
-    for (int i = 0; i != 12; ++i)
-    {
+    // remove comments here to use return_some_numbers
+    // using this to just place into calculator (in linux of course to easily check numbers;
+    for (int i = 0; i != 12; ++i) {
         //cout << i + 0.1 / (32 + 7) + 2.3 + (i * i) / 3.5 << ", ";
         //cout << i + 0.1 / (32 + 7) + 2.3 + (i * i) / 3.5 << " + ";
         //cout << i * i / (32.8 + 7.1) + 2 + (i * i) / 0.2 << ", ";
         //cout << i * i / (32.8 + 7.1) + 2 + (i * i) / 0.2 << " + ";
+
     }
+     */
 }
-*/
 
 double &comp_vec(const vector<double>&v1, const vector<double>&v2) 
 {
@@ -36,7 +38,7 @@ double &comp_vec(const vector<double>&v1, const vector<double>&v2)
                 "a some numarical value), or not correct amount "
                 "of numbers to calculate average with. ");
     }
-    
+
     double v1_cnt = 0, v2_cnt = 0; //declare v1 & v2 to hold total additions
     double v1_tot = 0, v2_tot = 0; //declare v1_t and v2_t to hold total avg's.
 
@@ -56,7 +58,7 @@ double &comp_vec(const vector<double>&v1, const vector<double>&v2)
     return v1_tot > v2_tot ? v1_tot : v2_tot;
 }
 
-int main() 
+int main()
 {
     //random list of numbers for each vector for proofing
 
@@ -67,6 +69,7 @@ int main()
         18.5883, 23.3026, 28.5883, 34.4454, 40.874, 47.874, 44.5};
 
     double result = comp_vec(list1, list2);
-    cout << result << endl;
+    cout << "Largest avg. between vector1 & vector2: " << result << endl;
     return 0;
 }
+
