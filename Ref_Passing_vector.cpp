@@ -5,8 +5,8 @@
  * it's natural to get flustered and want to quit C++ forever - 
  * Created on November 17, 2017, 9:03 AM
  */
-#include <inclds>
-#include<exception>
+
+#include"ref-nbr-vec"
 
 //Get two vectors that have > 2 numbers in each vector.
 double &comp_vec(const vector<double> &v1, const vector<double> &v2) 
