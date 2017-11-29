@@ -1,5 +1,6 @@
 //[i like this equation for a stream of numbers]
 //  i / (32 + 7) + 2 + (i * i) / 3 << endl;
+#include"ref-nbr-vec"
 
 void return_some_numbers()
 {
